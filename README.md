@@ -2,7 +2,7 @@
 
 Autonomous vehicles are transforming the way we think about transportation, but for them to navigate safely, they need to “see” and understand their surroundings.
 
-This project is all about building a real-time object detection system that allows self-driving cars to detect pedestrians, vehicles, traffic signs, and obstacles—so they can make smart, safe, and instantaneous decisions on the road.
+This project is all about building a real-time object detection system that allows self-driving cars to detect pedestrians, vehicles, traffic signs, and obstacles,so they can make smart, safe, and instantaneous decisions on the road.
 
 ## Project Motivation & Vision
 
