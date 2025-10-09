@@ -1,13 +1,18 @@
-# -Real-Time-Object-Detection-for-Autonomous-Vehicles
-Welcome! This project is all about creating a real-time object detection system for autonomous vehicles—a system that allows cars to truly “see” and understand their surroundings. Autonomous vehicles rely heavily on accurate perception to navigate safely, and being able to detect objects like pedestrians, vehicles, traffic signs, and road obstacles in real time is absolutely critical.
-The goal of this project is to equip self-driving cars with a robust and intelligent vision system that can:
+Welcome
 
-Identify pedestrians to prevent accidents and protect lives.
+Autonomous vehicles are transforming the way we think about transportation, but for them to navigate safely, they need to “see” and understand their surroundings.
 
-Recognize vehicles around the car for safe lane changes, overtaking, and maintaining distance.
+This project is all about building a real-time object detection system that allows self-driving cars to detect pedestrians, vehicles, traffic signs, and obstacles—so they can make smart, safe, and instantaneous decisions on the road.
 
-Detect traffic signs and signals to follow traffic rules automatically.
+Project Motivation & Vision
 
-Spot obstacles and road hazards to react quickly in unpredictable situations.
+Imagine a world where cars can perceive their environment like humans do. Autonomous vehicles have the potential to reduce accidents, save lives, and make commuting more efficient.
 
-By combining advanced machine learning models, transfer learning, and real-world driving datasets, this system is designed to work reliably.Ultimately, the project aims to enhance the safety, efficiency, and intelligence of autonomous vehicles, making them smarter, more aware, and better prepared for the challenges of real-world driving.
+Achieving this requires robust and intelligent perception systems that can detect objects in real time across diverse conditions.
+
+This project tackles that challenge by building a real-time object detection system designed to be fast, accurate, and reliable. By combining state-of-the-art object detection models, transfer learning, and real-world driving datasets, this project aims to empower autonomous vehicles with intelligence and reliability, making roads safer and driving smarter.
+
+Dataset
+
+We use the BDD100K dataset, a large-scale driving dataset with labeled objects:
+🔗 BDD100K on Kaggle
