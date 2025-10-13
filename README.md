@@ -16,3 +16,11 @@ This project tackles that challenge by building a real-time object detection sys
 
 We use the BDD100K dataset, a large-scale driving dataset with labeled objects:
 🔗 BDD100K on Kaggle
+
+## YOLOv11 pretrained model sizes Performance Comparison 
+
+| Model Version | Overall mAP@0.5 | Performance on 'person' Class | Trade-off & Recommendation |
+| :--- | :---: | :---: | :--- |
+| **YOLO l (Large)** | **0.058 (Highest)** | **0.541 (Best)** | **Maximum Accuracy.** Best at detecting the dominant 'person' class, but is the largest and slowest model. |
+| **YOLO m (Medium)** | 0.057 | 0.529 (Very Good) | **Best Balance.** Near-identical overall accuracy to l but is significantly faster and smaller. Recommended for deployment. |
+| **YOLO s (Small)** | 0.052 (Lowest) | 0.467 (Lowest) | **Highest Speed.** Fastest and smallest model, but shows a clear drop in performance, even on the best-performing class. |
