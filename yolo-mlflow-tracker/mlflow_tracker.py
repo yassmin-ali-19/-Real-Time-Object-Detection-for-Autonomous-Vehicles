@@ -11,9 +11,26 @@ mlruns_path.mkdir(parents=True, exist_ok=True)
 mlflow.set_tracking_uri(mlruns_path.as_uri())
 
 def start_run():
-    mlflow.set_experiment("YOLO_Streamlit")
+    client = MlflowClient()
+    experiment_name = "YOLO_Streamlit"
+
+    # Check if experiment exists
+    exp = client.get_experiment_by_name(experiment_name)
+    if exp:
+        if exp.lifecycle_stage == "deleted":
+            # Restore deleted experiment
+            client.restore_experiment(exp.experiment_id)
+    else:
+        # Create experiment if it doesn't exist
+        mlflow.create_experiment(experiment_name)
+
+    # Set the experiment (works if active or restored)
+    mlflow.set_experiment(experiment_name)
+
+    # Start a run
     run = mlflow.start_run()
     return run
+
 
 def log_hyperparams(params: dict, run_id: str | None = None):
     run = mlflow.active_run()
