@@ -1,4 +1,3 @@
-# yolo_model.py
 from ultralytics import YOLO
 from PIL import Image
 

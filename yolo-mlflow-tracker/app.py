@@ -11,12 +11,12 @@ from ultralytics import YOLO
 import av
 import os
 from fractions import Fraction
-
-import streamlit as st
 from PIL import Image
 import threading
 
 import datetime
+import time
+import mlflow
 
 
 # ---------------- Page Config ----------------
@@ -114,7 +114,7 @@ def process_video_upload(uploaded_file, model, class_names, scale_factor=1.0, fr
         st.session_state["processed_videos"] = {}
 
     if uploaded_file.name in st.session_state["processed_videos"]:
-        st.success("▶️ Playing previously processed video")
+        st.success("Playing previously processed video")
         st.video(st.session_state["processed_videos"][uploaded_file.name])
         return
 
@@ -125,7 +125,7 @@ def process_video_upload(uploaded_file, model, class_names, scale_factor=1.0, fr
 
     cap = cv2.VideoCapture(temp_path)
     if not cap.isOpened():
-        st.error("❌ Could not open video file")
+        st.error("Could not open video file")
         return
 
     frames = []
@@ -186,7 +186,7 @@ def process_video_upload(uploaded_file, model, class_names, scale_factor=1.0, fr
         progress.progress(min(processed / max(total_frames // frame_skip, 1), 1.0))
 
     cap.release()
-    st.success("✅ Video processed successfully!")
+    st.success("Video processed successfully!")
 
     os.makedirs("videos", exist_ok=True)
     output_path = os.path.join("videos", f"processed_{uploaded_file.name}")
@@ -273,13 +273,6 @@ if uploaded_file:
                 frame_skip=frame_skip)
 # ---------------- Live Webcam ----------------
 st.title("YOLO Real-Time Webcam Detection")
-
-import streamlit as st
-import time
-import numpy as np
-from ultralytics import YOLO
-from streamlit_webrtc import webrtc_streamer, WebRtcMode, VideoTransformerBase, RTCConfiguration
-import mlflow
 
 # ------------------ YOLO Transformer with MLflow ------------------
 class YOLOTransformer(VideoTransformerBase):
