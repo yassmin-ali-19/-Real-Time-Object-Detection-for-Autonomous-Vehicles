@@ -16,3 +16,13 @@ This project tackles that challenge by building a real-time object detection sys
 
 We use the BDD100K dataset, a large-scale driving dataset with labeled objects:
 🔗 BDD100K on Kaggle
+
+## YOLOv11 pretrained model sizes Performance Comparison 
+
+| Model Version | All Classes mAP@0.5 | Car mAP@0.5 |
+| :--- | :---: | :---: |
+| YOLO l (Large) | 0.058 | 0.002 |
+| YOLO m (Medium) | 0.057 | 0.002 |
+| YOLO s (Small) | 0.052 | 0.002 |
+
+
